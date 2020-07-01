@@ -1,4 +1,0 @@
-"0",""
-"0","# pfmax.stat / fmax.stat + plot_annotation(tag_levels = ""a"", tag_suffix = "")"") # plot annotation used to add labels to the plot"
-"0","#put two or more graphs into the same column, in patchwork package"
-"0","#pfmax.stat + fmax.stat #put two or more graphs on the same row"
