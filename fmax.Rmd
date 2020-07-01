@@ -65,13 +65,17 @@ setwd("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-l
 \newpage
 # Introduction
 
-In aquatic systems, vertical distribution of chlorophyll-*a* often exhibits a maximum peak in water column. This peak is widely called subsurface chlorophyll maximum (SCM) [@cullen15; @leach18]. The SCM is a subsurface layer below the surface mixed layer enriched in chlorophyll-*a* (Chl-*a*) in aquatic water bodies [@latasa17; @scofield17; @cullen15]. SCM occurs because phytoplankton balance opposing gradients of light from above with availability of nutrients, which often increase with depth under stratified conditions [@leach18; @holm04]. This layer also forms as a result of different processes including in situ phytoplankton growth at depth, settling of algal cells and photoadaptation by phytoplankton [@scofield17; @leach18; @fennel03; @cullen15; @cullen82; @latasa17]. In tropics, SCM occurs at depth greater than 50 m [@holm04] and in Western Indian Ocean it occurs at around 50--75 m depth [@george13; @conkright98; @owens93; @wiggert06]. This layer is ecologically important as it play a major role in primary production and nutrient cycling and their location determine vertical habitats for primary consumers in aquatic environment [@leach18]. Studies show that, SCM can contribute more than 50% of primary production in oceans [@leach18; @gong17]. Additionally, at SCM there is always high densities of aquatic creatures such as predators, heterotrophic protozoans and bacterial biomass that are higher than 10 times elsewhere in the water column [@leach18]. 
+In aquatic systems, vertical distribution of chlorophyll-*a* often exhibits a maximum peak in water column. This feature often exhibits a maximum peak in water column, is widely called subsurface chlorophyll maximum (SCM) [@cullen15; @leach18]. The SCM is a subsurface layer below the surface mixed layer enriched in chlorophyll-*a* (Chl-*a*) [@latasa17; @scofield17; @cullen15]. SCM occurs because phytoplankton balance opposing gradients of light from above with availability of nutrients, which often increase with depth under stratified conditions [@leach18; @holm04]. The subsurface Chl maxima generally represent ecologically significant features of the planktonic ecosystem-contiguous layers of phytoplankton that are nearly ubiquitous in stratified waters [@cullen15]. SCM are generally formed by biological-chemical-physical interactions on vertical scales of 1 m or less and are strongly influenced by stratification, shear, and sometimes nutrient gradients [@scofield17; @leach18; @fennel03; @cullen15; @cullen82; @latasa17]
 
-Due to its ecological potential, studies on SCM are very important in understanding distribution and dynamics of marine ecosystems. Because of decline in amount of phytoplankton biomass around the world oceans, studies on distribution and dynamics of Chl-*a* are very important in understanding the productivity potential along the water column. Indeed, variations in the fish catches observed in the oceans are mainly explained by changes in chlorophyll-*a* concentration, which is an indicator of the presence of phytoplankton biomass [@valenti15].
+In tropics, SCM occurs at depth greater than 50 m [@holm04] and in Western Indian Ocean it occurs at around 50--75 m depth [@george13; @conkright98; @owens93; @wiggert06]. This layer is ecologically important as it play a major role in primary production and nutrient cycling and their location determine vertical habitats for primary consumers in aquatic environment [@leach18]. Studies show that, SCM can contribute more than 50% of primary production in oceans [@leach18; @gong17]. Additionally, at SCM there is always high densities of aquatic creatures such as predators, heterotrophic protozoans and bacterial biomass that are higher than 10 times elsewhere in the water column [@leach18; @valenti15]. 
 
-Previous research in Tanzania studied phytoplankton and Chl-*a* at surface of the ocean. For example a study by @bry77; @lugo96 and @maggie02 determined biomass and abundance of phytoplankton as well as primary production along Tanzania coastal surface waters. Other studies used both in situ and satellite data to determine the abundance and distribution of phytoplankton at Zanzibar and Pemba Channels [@nya13]. A study by @semba16 assessed how the decrease in Chl-*a* impact on prawn catches at Rufiji-Mafia Channel. Other studies estimated the amount of primary production using carbon 14 (^14^C) in Zanzibar waters [@wallberg2000; @maggie02; @lugo02]. Other studies looked on effects of environmental variables on spatial and seasonal variation of Chl-*a* at Unguja Zanzibar [@nya18]. Also, studies by @limbu15; @lugo96 and @bry77 determined phytoplankton species composition in Tanzania coastal waters.
+Though SCM is thin layer in the water column, but it has significant contribution of biomass and primary production. @takahashi1984abundance reported that ???55% of the total chlorophyll in a water column of the western North Pacific Ocean was found along the SCM layer. @estrada1985life estimated that the SCM contributed to up to 30% of the total summer primary production in the Catalano Balearic Sea. Despite more than three decades of oceanographic research on the coastal and marine waters of Tanzania and considerable progress in understanding regional dynamics,vertical distribution of chlorophyll-*a* are still poorly known. 
 
-These studies help to understand the distribution and abundance of phytoplankton, seasonal and spatial variation of Chl-*a* concentration, primary production as well as phytoplankton species composition in Tanzania surface waters. However, information on the vertical distribution of chlorophyll-*a* along the water column which contribute significantly in total marine primary production is poorly understood. This study dealt with (1) Determine the depth at which SCM occurs in northeast (NE) and southeast (SE) monsoon season (2) Determine the concentration of chlorophyll-*a* at SCM in both NE and SE monsoon season (3) Comparison of Chl-*a* between the surface layer and SCM layer.
+Previous research in Tanzania studied phytoplankton and Chl-*a* are limited at the surface of the ocean. For example @bry77; @lugo96 and @maggie02 determined biomass and abundance of phytoplankton and primary production along Tanzania coastal surface waters. Similarly, @nya13 investigated the abundance and distribution of phytoplankton at Zanzibar and Pemba Channels using in situ and satellite data to determine. @semba16 assessed the association of Chl-*a* and catches of prawn from artisal fishery at Rufiji-Mafia Channel. Other studies estimated the amount of primary production using carbon 14 (^14^C) in Zanzibar waters [@wallberg2000; @maggie02; @lugo02]. Other studies looked on effects of environmental variables on spatial and seasonal variation of Chl-*a* at Unguja Zanzibar [@nya18]. Also, studies by @limbu15; @lugo96 and @bry77 determined phytoplankton species composition in Tanzania coastal waters.
+
+
+These previous studies have contributed our understanding on the distribution and abundance of phytoplankton; seasonal and spatial variation of Chl-*a* concentration; primary production and  species composition of phytoplankton. However, all these studies explored the dynamics of phytoplankton on surface waters. Information on the vertical distribution of chlorophyll-*a* along the water column which contribute significantly in total marine primary production is poorly understood. This study aims to determine the depth at which SCM occurs during the constrasting northeast (NE) and southeast (SE) monsoon season; determine seasonal variation of SCM concentration of chlorophyll-*a*  and comparison of Chl-*a* between the surface layer and SCM layer. 
+
 
 
 ```{r , include=FALSE}
@@ -112,14 +116,37 @@ load("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-le
 
 ```
 
+
+```{r}
+bathymetry = raster::raster("d:/GIS/ROADMAP/Etopo 1/Tanzania_etopo1/tanza_1-7390.asc") %>%
+  raster::as.data.frame(xy = TRUE) %>%
+  rename(lon = 1, lat = 2, depth = 3) %>%
+  filter(lon > 38 & lon < 45 & lat > -12 & lat < -1 & depth <= 0) %>%
+  mutate(depth = depth * -1)
+
+
+
+```
+
 ```{r, map, fig.cap="Map showing location of study sites at Tanzania waters. Black filled cycles show sampling stations along transect. An inset map shows location of study area at Tanzania", echo=FALSE, warning=FALSE, message=FALSE, fig.width=6, fig.height=5}
 map = ggplot() +
+  metR::geom_contour2(data = bathymetry %>% filter(lon < 42 & depth < 1700 ), 
+                      aes(x = lon, y = lat, z = depth), binwidth = 1000, col = "grey80")+
+   metR::geom_text_contour(data = bathymetry %>% filter(lon < 42 & depth < 1700 ), 
+                      aes(x = lon, y = lat, z = depth), 
+                      binwidth = 1000, check_overlap = TRUE, rotate = FALSE, parse = TRUE, stroke = 0.2, size = 3.0)+
+  metR::geom_contour2(data = bathymetry %>% filter(lon < 42 & depth < 3200 ), 
+                      aes(x = lon, y = lat, z = depth), binwidth = 2500, col = "grey80")+
+   metR::geom_text_contour(data = bathymetry %>% filter(lon < 42 & depth < 3200 ), 
+                      aes(x = lon, y = lat, z = depth), 
+                      binwidth = 2500, check_overlap = TRUE, rotate = FALSE, parse = TRUE, stroke = 0.2, size = 3.0)+
   geom_sf(data = tz.mz, col = "black") + 
   geom_point(data = ne.station, aes(x = lon, y = lat), size = 2) +
   geom_point(data = se.station, aes(x = lon, y = lat), size = 2) +
   coord_sf(xlim = c(38, 42), ylim = c(-11, -5.5)) + 
   scale_x_continuous(breaks = c(38, 40, 42), labels = metR::LonLabel(c(38, 40, 42))) +
   scale_y_continuous(breaks = c(-10,-8,-6), labels = metR::LatLabel(c(-10, -8, -6)))+
+  theme_bw() + 
   theme(panel.background = element_rect(colour = "black", fill = NA),
         axis.text = element_text(colour = "black", size = 11),
         panel.grid.major = element_line(colour = "grey90", linetype = 3)) +
@@ -137,6 +164,7 @@ map = ggplot() +
 inset = ggplot() +
   geom_sf(data = tz.mz) + 
   geom_path(data = site, aes(x = lon, y = lat), col = "black", size = 0.5) + 
+  theme_bw() +
   theme(panel.background = element_rect(colour = "black", fill = NA),
         axis.text = element_blank(),
         axis.ticks = element_blank(),
@@ -153,8 +181,15 @@ cowplot::ggdraw() +
 
 ```
 
-## Data collection
-Data for this study was obtained from the 2004 Algoa cruise and 2017 International Indian Ocean Expedition 2 (IIOE-2) onboard Agulhas  II. The southeast monsoon (SE) data was collected on August 2004 and northeast monsoon (NE) on November 2017 and all were sampled in coastal waters of Tanzania. Fluorescence data were sampled along the water column and recorded using Conductivity Temperature Depth, CTD (make Seabird 11 plus, Seabird Electronics, USA). 
+## Data
+
+Existing profile data of chlorophyll-*a* concentration were obtained from two cruises conducted in the territorial waters of Tanzania between 2004 and 2017. During these cruises a total of 53 CTD profiles were casted. Data for this study were collected during the ACEP program in August 2004,  and the International Indian Ocean Expedition 2 (IIOE-2) in November 2017. The data dataset of August 2004 and June 2018 represent the southeast monsoon (SE) monsoon and those of November 2017 represent northeast monsoon season. Fluorescence data were sampled along the water column and recorded using Conductivity Temperature Depth, CTD (make Seabird 11 plus, Seabird Electronics, USA). 
+
+
+
+> The stations were concentrated between 46' and 48" N and extended from the shore (124OW) seaward to approximately 127" W. The stations located in waters shallower than 200 m are designated as shelf stations in this chapter; those located in waters with depths between 200 and 2,000 m as slope stations; those located in waters deeper than 2,000 m as oceanic stations. 
+
+
 
 ## Data processing
 The raw CTD data was converted to the *.cnv* file format using the sea bird (SBE) software. The *.cnv* data format was imported to R software and processed using **oce** package [@kelly2020]. A `for` loop function was used to iterate data for CTD stations at each transect for both NE and SE monsoon season. A `dir()` function was used to create a list of all CTD files in the working directory. A dummy file that stored CTD files was then created using a `list()` function. The `read.ctd()` function was used to read all CTD files in the working directory. The smoothing of all CTD profiles was done at a specific pressure of 1 using a `ctdDecimate()` function and only the downcast values of the profiles was used for analysis. 
