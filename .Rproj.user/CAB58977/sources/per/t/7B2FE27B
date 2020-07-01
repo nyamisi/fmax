@@ -1,0 +1,28 @@
+{
+    "id": "7B2FE27B",
+    "path": "~/Michi/phD/UDSM/Thesis/fmax/fmax/fmax.Rmd",
+    "project_path": "fmax.Rmd",
+    "type": "r_markdown",
+    "hash": "2746280328",
+    "contents": "",
+    "dirty": false,
+    "created": 1590671278033.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "chunk_output_type": "inline",
+        "cursorPosition": "855,455",
+        "ignored_words": "phytoplankton,Chl,Masumbuko,Semba,Michi,phD,Oce,ctd,ioe,Nyamisi,dataframe,algoa,cnv,datasets,africa,AdmInfr,afcntry,shp,fmax,Kimbiji,Lindi,Mtwara,Pemba,maxima,fpmax,Wilcoxon,nseason,kendall,pearson,lm,mgm,Isosurface,isofmax,Unguja,isosurface,thermocline,nearshore,photic,Sys,Tz,situ,photoadaptation,heterotrophic,Rufiji\n",
+        "scrollLine": "850",
+        "source_window_id": "",
+        "last_setup_crc32": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1592460351,
+    "encoding": "ISO8859-1",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1592460351983,
+    "read_only": false,
+    "read_only_alternatives": []
+}

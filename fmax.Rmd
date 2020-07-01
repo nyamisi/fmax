@@ -1,0 +1,868 @@
+---
+title: "Seasonal variation of subsurface chlorophyll maximum along Tanzania waters"
+author: 
+- Nyamisi Peter^1,4^, Charles Lugomela^2^, Margareth Kyewalyanga^3^
+- ^1^University of Dar es Salaam, P.O. Box 35061, Dar es Salaam, Tanzania
+- ^2^Nelson Mandela African Institution of Science and Technology, P.O.Box 447, Arusha, Tanzania
+- ^3^Institute of Marine Sciences, P.O. Box 668, Zanzibar, Tanzania
+- ^4^University of Dodoma, P.O. Box 338, Dodoma, Tanzania
+header-includes:
+  - \usepackage{float}
+  - \floatplacement{figure}{h}
+  - \renewcommand{\topfraction}{.85}
+  - \renewcommand{\bottomfraction}{.7}
+  - \renewcommand{\textfraction}{.15}
+  - \renewcommand{\floatpagefraction}{.66}
+  - \setcounter{topnumber}{3}
+  - \setcounter{bottomnumber}{3}
+  - \setcounter{totalnumber}{4}
+  - \usepackage{fontspec}
+  - \setmainfont{Adobe Caslon Pro} # Times New Roman
+  - \usepackage[utf8]{inputenc}
+  - \hypersetup{unicode=true,pdfusetitle,bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,breaklinks=false,backref=false,colorlinks=true,linkcolor=blue}
+  - \usepackage{titlecaps}
+date: "`r format(Sys.time(), '%d/%m/%Y')`"
+output: 
+  # bookdown::html_document2
+  bookdown::pdf_document2:
+    includes:
+    #in_header: preamble.tex
+    in_header: preamble.tex
+    before_body: frontpage.tex
+    after_body: endpage.tex
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    latex_engine: xelatex
+  # bookdown::word_document2
+fontsize: 12pt
+linestretch: 1.5
+lot: true
+lof: true
+geometry: "left = 4cm, right = 2.5cm, top = 4cm, bottom = 2.5cm" 
+papersize: a4
+editor_options: 
+  chunk_output_type: inline
+csl: havard.csl
+link-citations: yes
+bibliography: fmax.bib
+---
+\newpage
+# Abstract {-}
+Study on variation and distribution of chlorophyll-*a* fluorescence at subsurface chlorophyll maximum (SCM) layer was conducted along coastal waters of Tanzania in northeast (NE) and southeast (SE) monsoon seasons. Data was collected along five transects; at Zanzibar, Kimbiji, Mafia, Lindi and Mtwara. Subsurface chlorophyll maximum occurred at significant higher depth (greater than 50 m) in NE than in SE monsoon season (W = 0.15, *p* < 0.05) at all transects. There was a significant higher fluorescence concentration at SCM during SE than NE monsoon season for all transects  (W = 324, *p* < 0.05). Higher chlorophyll fluorescence at shallower depth in SE monsoon season at SCM layer is associated with high nutrient concentration brought by vertical mixing of water column as a result of high wind stress and low sea surface temperature in this season. Surface layer of the ocean had significant lower chlorophyll fluorescence than SCM layer for both NE (W = 905, *p* < 0.05) and SE (W = 210, *p* < 0.05) monsoon season. Areas away from the coast, had higher chlorophyll fluorescence during NE and lower in SE monsoon season at SCM layer. Lower fluorescence concentration away from the coast in SE monsoon season at SCM, is a result of poor nutrient, higher salinity and warmer water drained by East Africa Coastal Current (EACC) to these areas.
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+rm(list = ls())
+setwd("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-learning/bongo/Tz Vertical Pattern/")
+```
+
+\newpage
+# Introduction
+
+Vertical distribution of chlorophyll-*a* in aquatic systems often exhibits a maximum peak in water column, known as subsurface chlorophyll maximum (SCM) [@cullen15; @leach18]. The SCM is a subsurface layer below the surface mixed layer enriched in chlorophyll-*a* (Chl-*a*) in aquatic water bodies [@latasa17; @scofield17; @cullen15]. SCM occurs because phytoplankton balance opposing gradients of light from above with availability of nutrients, which often increase with depth under stratified conditions [@leach18; @holm04]. This layer also forms as a result of different processes including in situ phytoplankton growth at depth, settling of algal cells and photoadaptation by phytoplankton [@scofield17; @leach18; @fennel03; @cullen15; @cullen82; @latasa17]. In tropics, SCM occurs at depth greater than 50 m [@holm04] and in Western Indian Ocean it occurs at around 50--75 m depth [@george13; @conkright98; @owens93; @wiggert06]. This layer is ecologically important as it play a major role in primary production and nutrient cycling and their location determine vertical habitats for primary consumers in aquatic environment [@leach18]. Studies show that, SCM can contribute more than 50% of primary production in oceans [@leach18; @gong17]. Additionally, at SCM there is always high densities of aquatic creatures such as predators, heterotrophic protozoans and bacterial biomass that are higher than 10 times elsewhere in the water column [@leach18]. 
+
+Due to its ecological potential, studies on SCM are very important in understanding distribution and dynamics of marine ecosystems. Because of decline in amount of phytoplankton biomass around the world oceans, studies on distribution and dynamics of Chl-*a* are very important in understanding the productivity potential along the water column. Indeed, variations in the fish catches observed in the oceans are mainly explained by changes in chlorophyll-*a* concentration, which is an indicator of the presence of phytoplankton biomass [@valenti15].
+
+Previous research in Tanzania studied phytoplankton and Chl-*a* at surface of the ocean. For example a study by @bry77; @lugo96 and @maggie02 determined biomass and abundance of phytoplankton as well as primary production along Tanzania coastal surface waters. Other studies used both in situ and satellite data to determine the abundance and distribution of phytoplankton at Zanzibar and Pemba Channels [@nya13]. A study by @semba16 assessed how the decrease in Chl-*a* impact on prawn catches at Rufiji-Mafia Channel. Other studies estimated the amount of primary production using carbon 14 (^14^C) in Zanzibar waters [@wallberg2000; @maggie02; @lugo02]. Other studies looked on effects of environmental variables on spatial and seasonal variation of Chl-*a* at Unguja Zanzibar [@nya18]. Also, studies by @limbu15; @lugo96 and @bry77 determined phytoplankton species composition in Tanzania coastal waters.
+
+These studies help to understand the distribution and abundance of phytoplankton, seasonal and spatial variation of Chl-*a* concentration, primary production as well as phytoplankton species composition in Tanzania surface waters. However, information on the vertical distribution of chlorophyll-*a* along the water column which contribute significantly in total marine primary production is poorly understood. This study dealt with (1) Determine the depth at which SCM occurs in northeast (NE) and southeast (SE) monsoon season (2) Determine the concentration of chlorophyll-*a* at SCM in both NE and SE monsoon season (3) Comparison of Chl-*a* between the surface layer and SCM layer.
+
+
+```{r , include=FALSE}
+require(oce)
+require(ocedata)
+require(sf)
+require(tidyverse)
+require(ggsn)
+require(xtractomatic)
+require(lubridate)
+require(gridGraphics)
+require(rgl)
+require(patchwork)
+require(leaflet)
+
+```
+
+\newpage
+# Methodology
+## Study site
+
+This study was conducted along coastal waters of Tanzania in Indian Ocean. There were five study sites at Zanzibar, Kimbiji, Mafia, Lindi and Mtwara (Figure \@ref(fig:map)). At each site, there were one transect which had different sampling stations. Zanzibar site is located at eastern coast of Zanzibar Island. Due to its distant from Zanzibar town, eastern side of Zanzibar Island have little influence from human activities [@nya18]. The Kimbiji site locates in the southern side of Dar es Salaam and in northern of Mafia Channel. Mafia site locates in the south-east of Mafia Island but within the Mafia Marine park and reserve area. Lindi and Mtwara are found in southern coast of Tanzania. Mtwara borders Mozambique country while Lindi is in the northern of Mtwara. 
+
+The coastal area of Tanzania have a tropical climate like other country in the western Indian Ocean. The climate is associated with monsoon winds; the northeast monsoon winds (NE) which starts from November to March and southeast monsoon (SE) from May to September [@nyandwi13]. The NE monsoon is characterized by  weaker winds blowing from north to south and  mean sea surface temperature of 30^o^C [@nya18; @semba16]. SE monsoon winds are usually strong and blowing from south to north and characterized by mean sea surface temperature of 23^o^C [@semba16; @mahongo11; @nya18]. Coastal regions of Tanzania have two rain seasons; the short rain season which starts from October to December and the long rain season from March to May [@semba16; @nya18; @mahongo15; @diop16]. 
+
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+
+africa = st_read("D:/GIS/Tanzania spatial data Bank/EAF14 Tanzania spatial datasets/africa/Spatial/AdmInfr/afcntry.shp")
+tz.mz = africa%>%filter(CNTRY_NAME == "Tanzania" |  CNTRY_NAME == "Mozambique" | CNTRY_NAME == "Kenya")%>%
+  select(-c(REGIONA, FIPS_CNTRY, EMPTY, EMPTY2))
+
+site = data_frame(lon = c(38.8, 41, 41, 38.8, 38.8),
+                  lat = c(-11.2, -11.2, -5.4, -5.4, -11.2))
+
+
+load("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-learning/bongo/Tz Vertical Pattern/station.RData")
+
+```
+
+```{r, map, fig.cap="Map showing location of study sites at Tanzania waters. Black filled cycles show sampling stations along transect. An inset map shows location of study area at Tanzania", echo=FALSE, warning=FALSE, message=FALSE, fig.width=6, fig.height=5}
+map = ggplot() +
+  geom_sf(data = tz.mz, col = "black") + 
+  geom_point(data = ne.station, aes(x = lon, y = lat), size = 2) +
+  geom_point(data = se.station, aes(x = lon, y = lat), size = 2) +
+  coord_sf(xlim = c(38, 42), ylim = c(-11, -5.5)) + 
+  scale_x_continuous(breaks = c(38, 40, 42), labels = metR::LonLabel(c(38, 40, 42))) +
+  scale_y_continuous(breaks = c(-10,-8,-6), labels = metR::LatLabel(c(-10, -8, -6)))+
+  theme(panel.background = element_rect(colour = "black", fill = NA),
+        axis.text = element_text(colour = "black", size = 11),
+        panel.grid.major = element_line(colour = "grey90", linetype = 3)) +
+  labs(x = "", y = "") +
+  annotate(geom = "text", x = c(39.7, 39.2, 40.15, 39.5, 40.05), y = c(-5.9, -7, -7.8, -9.8, -10.5),
+           label = c("Zanzibar", "Kimbiji", "Mafia", "Lindi", "Mtwara")) +
+  ggspatial::annotation_north_arrow(data = tz.mz, height = unit(1, "cm"), width = unit(1, "cm"),
+                                    pad_x = unit(0.25, "cm"), pad_y = unit(12, "cm")) +
+  ggspatial::annotation_scale(data = tz.mz, bar_cols = c("black", "white"),
+                              pad_x = unit(0.25, "cm"), pad_y = unit(0.5, "cm"),
+                              line_width = 1, height = unit(0.25, "cm"),
+                              text_pad = unit(0.15, "cm"),text_cex = 0.8)
+  
+
+inset = ggplot() +
+  geom_sf(data = tz.mz) + 
+  geom_path(data = site, aes(x = lon, y = lat), col = "black", size = 0.5) + 
+  theme(panel.background = element_rect(colour = "black", fill = NA),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()) +
+  coord_sf(ylim = c(-12.5, -1), xlim = c(29.5, 42)) +
+  annotate(geom = "text", x = c(35, 38, 39), y = c(-6, -12, -1.5), 
+           label = c("Tanzania", "Mozambique", "Kenya"), size = 3)
+
+cowplot::ggdraw() +
+  cowplot::draw_plot(x= 0, y = 0, width = 1, height = 1, plot = map) +
+  cowplot::draw_plot(x = 0.58, y = 0.71, width = 0.23, height = 0.28, plot = inset)
+
+#ggsave("map.png", dpi = 300, width = 7, height = 6, units = "in")
+
+```
+
+## Data collection
+Data for this study was obtained from the 2004 Algoa cruise and 2017 International Indian Ocean Expedition 2 (IIOE-2) onboard Agulhas  II. The southeast monsoon (SE) data was collected on August 2004 and northeast monsoon (NE) on November 2017 and all were sampled in coastal waters of Tanzania. Fluorescence data were sampled along the water column and recorded using Conductivity Temperature Depth, CTD (make Seabird 11 plus, Seabird Electronics, USA). 
+
+## Data processing
+The raw CTD data was converted to the *.cnv* file format using the sea bird (SBE) software. The *.cnv* data format was imported to R software and processed using **oce** package [@kelly2020]. A `for` loop function was used to iterate data for CTD stations at each transect for both NE and SE monsoon season. A `dir()` function was used to create a list of all CTD files in the working directory. A dummy file that stored CTD files was then created using a `list()` function. The `read.ctd()` function was used to read all CTD files in the working directory. The smoothing of all CTD profiles was done at a specific pressure of 1 using a `ctdDecimate()` function and only the downcast values of the profiles was used for analysis. 
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ne.file.tz = dir("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-learning/bongo/", pattern = ".cnv", full.names = TRUE)
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+load("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-learning/bongo/ctd2018/ioe2")
+ctd.se.tz = ctd%>%ctdDecimate(p = 1)
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+algoa.file = dir("D:/Users/Masumbuko.Semba/Documents/Michi/phD/UDSM/Data Manipulation/Oce-learning/algoa/processing/", pattern = ".cnv", full.names = T) 
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ctd.ne.tz = list()
+
+for (i in 1:length(ne.file.tz)) {
+  ctd.ne.tz[[i]] = read.ctd(ne.file.tz[[i]])%>%
+    ctdDecimate(p = 1)
+  ctd.ne.tz[[i]]@metadata$scientist = ("Nyamisi Peter")
+  ctd.ne.tz[[i]]@metadata$institute = ("University of Dodoma")
+  ctd.ne.tz[[i]]@metadata$address = ("P.O BOX 338, Dodoma")
+  
+}
+
+
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ctd.algoa = list()
+
+for (i in 1:length(algoa.file)) {
+  
+ctd.algoa[[i]] = read.ctd(algoa.file[[i]])%>%
+ctdDecimate(p = 1)
+ctd.algoa[[i]]@metadata$scientist = "Nyamisi Peter"
+ctd.algoa[[i]]@metadata$institute = "University of Dodoma"
+ctd.algoa[[i]]@metadata$address = "P.O BOX 338, Dodoma"
+
+}
+
+```
+
+The list CTD files were then converted to section using `as.section()` function which was then grouped with their respective stations. Each station was converted into a dataframe using a `for()` loop function. Data for all stations were grouped together using `bind_rows()` function. 
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ctd.ne.section.tz = ctd.ne.tz%>%as.section()
+ctd.ne.section.st.tz = ctd.ne.section.tz@data$station
+
+ctd.se.section.tz = ctd.se.tz%>%as.section()
+ctd.se.section.st.tz = ctd.se.section.tz@data$station
+
+ctd.algoa.section = ctd.algoa%>%as.section()
+ctd.algoa.section.st = ctd.algoa.section@data$station
+
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ctd.ne.tb.tz = list()
+
+for (m in 1:length(ctd.ne.section.st.tz)) {
+  
+  ctd.ne.tb.tz[[m]] = ctd.ne.section.st.tz[[m]]@data %>%as_tibble()%>%
+  mutate(lon = ctd.ne.section.st.tz[[m]]@metadata$longitude,
+         lat = ctd.ne.section.st.tz[[m]]@metadata$latitude,
+         profile = m)%>%
+  select(lon, lat, profile, pressure, temperature, salinity, oxygen, conductivity, fluorescence)
+  
+}
+
+
+ctd.ne.data.tz = bind_rows(ctd.ne.tb.tz)
+
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ctd.se.tb.tz = list()
+
+for (a in 1:length(ctd.se.section.st.tz)) {
+  
+  ctd.se.tb.tz[[a]] = ctd.se.section.st.tz[[a]]@data%>%
+  as_tibble()%>% 
+  mutate(lon = ctd.se.section.st.tz[[a]]@metadata$longitude,
+         lat = ctd.se.section.st.tz[[a]]@metadata$latitude,
+         profile = a)%>%
+  select(lon, lat, profile, pressure, temperature, salinity, oxygen, conductivity, fluorescence)
+  
+}
+
+ctd.se.data.tz = bind_rows(ctd.se.tb.tz)
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+ctd.algoa.tb.tz = list()
+
+for (m in 1:length(ctd.algoa.section.st)) {
+  
+  ctd.algoa.tb.tz[[m]] = ctd.algoa.section.st[[m]]@data %>%as_tibble()%>%
+  mutate(lon = ctd.algoa.section.st[[m]]@metadata$longitude,
+         lat = ctd.algoa.section.st[[m]]@metadata$latitude,
+         profile = m)%>%
+  select(lon, lat, profile, pressure, temperature, salinity, oxygen, conductivity, fluorescence)
+  
+}
+
+ctd.algoa.data.tz = bind_rows(ctd.algoa.tb.tz)
+
+```
+
+The `which.max()` was used to determine the index at which subsurface chlorophyll maximum (SCM) belongs for each sampling station. The location of the station, pressure (depth), fluorescence and other variable of interest at DCM was also calculated from the index obtained. Thereafter, all NE and SE monsoon season data at SCM layer were grouped together using ` bind_rows()` function of **dplyr** package [@dplyr2020] and make a single data frame. 
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+## Fmax
+# combining all data at fmax 
+data.fmax = ctd.se.data.tz %>% 
+  group_by(profile) %>% 
+  summarise(index.fmax = which.max(fluorescence), 
+            lon = lon[index.fmax],
+            lat = lat[index.fmax],
+            pressure = pressure[index.fmax],
+            fluorescence = fluorescence[index.fmax],
+            temperature = temperature[index.fmax],
+            salinity = salinity[index.fmax],
+            oxygen = oxygen[index.fmax])%>%
+  ungroup()%>%
+  mutate(season = "SE")%>%
+  bind_rows(
+            
+            
+            
+ctd.ne.data.tz %>% 
+  group_by(profile) %>% 
+  summarise(index.fmax = which.max(fluorescence), 
+            lon = lon[index.fmax],
+            lat = lat[index.fmax],
+            pressure = pressure[index.fmax],
+            fluorescence = fluorescence[index.fmax],
+            temperature = temperature[index.fmax],
+            salinity = salinity[index.fmax],
+            oxygen = oxygen[index.fmax])%>%
+  ungroup()%>%
+  mutate(season = "NE"),
+
+ctd.algoa.data.tz %>% 
+  group_by(profile) %>% 
+  summarise(index.fmax = which.max(fluorescence), 
+            lon = lon[index.fmax],
+            lat = lat[index.fmax],
+            pressure = pressure[index.fmax],
+            fluorescence = fluorescence[index.fmax],
+            temperature = temperature[index.fmax],
+            salinity = salinity[index.fmax],
+            oxygen = oxygen[index.fmax])%>%
+  ungroup()%>%
+  mutate(season = "SE.algoa"))
+            
+            
+```
+
+The mean depth and chlorophyll fluorescence together with their standard error at SCM was calculated for all sampling stations. The sampling stations were grouped into transects; Zanzibar, Kimbiji, Mafia, Lindi and Mtwara based on latitude at which stations occurs.
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+data.fmax.mean = data.fmax%>%
+  filter(pressure >= 40 & pressure < 80)%>%
+  group_by(season)%>%
+  summarise(pmean = mean(pressure, na.rm = T),
+            perror = sd(pressure, na.rm = T)/sqrt(length(pressure)),
+            pupper = pmean + perror,
+            plower = pmean - perror,
+            fmean = mean(fluorescence, na.rm = T),
+            ferror = sd(fluorescence, na.rm = T)/sqrt(length(fluorescence)),
+            fupper = fmean + ferror,
+            flower = fmean - ferror)
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+pressure.chl.combined = data.fmax%>%
+  mutate(transect = case_when(lat > -7 ~ "Zanzibar",
+                              lat > -7.5 & lat < -6.5~ "Kimbiji",
+                              lat > -8.5 & lat < -7.5 ~ "Mafia",
+                              lat >= -10 & lat < -8.5 ~ "Lindi",
+                              lat < -10 ~ "Mtwara"))%>%
+  mutate(criteria = "pressure")%>%
+  bind_rows(
+    data.fmax%>%
+  mutate(transect = case_when(lat > -7 ~ "Zanzibar",
+                              lat > -7.5 ~ "Kimbiji",
+                              lat > -8.5 & lat < -7.5 ~ "Mafia",
+                              lat >= -10 & lat < -8.5 ~ "Lindi",
+                              lat < -10 ~ "Mtwara"))%>%
+    mutate(criteria = "fluorescence"))%>%
+  filter( lon < 41 & pressure > 10)
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+pressure.chl.stat = pressure.chl.combined %>%
+group_by(season, transect, criteria)%>%
+  summarise(fmean = mean(fluorescence, na.rm = T),
+            ferror = sd(fluorescence, na.rm = T)/sqrt(length(fluorescence)),
+            pmean = mean(pressure, na.rm = T),
+            perror = sd(pressure, na.rm = T)/sqrt(length(pressure)))
+```
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+# combining all data at the surface of the ocean
+ctd.surface.data = ctd.ne.data.tz%>%
+  filter(pressure != 0)%>%group_by(profile)%>%
+  summarise(index.pmin = which.min(pressure),
+            lon = lon[index.pmin],
+            lat = lat[index.pmin],
+            pressure = pressure[index.pmin],
+            fluorescence = fluorescence[index.pmin],
+            temperature = temperature[index.pmin],
+            salinity = salinity[index.pmin],
+            oxygen = oxygen[index.pmin])%>%
+  ungroup()%>%
+  mutate(season = "NE")%>%
+  bind_rows(
+    
+
+ctd.se.data.tz%>%
+  filter(pressure != 0)%>%group_by(profile)%>%
+  summarise(index.pmin = which.min(pressure),
+            lon = lon[index.pmin],
+            lat = lat[index.pmin],
+            pressure = pressure[index.pmin],
+            fluorescence = fluorescence[index.pmin],
+            temperature = temperature[index.pmin],
+            salinity = salinity[index.pmin],
+            oxygen = oxygen[index.pmin])%>%
+  ungroup()%>%
+  mutate(season = "SE"),
+
+    
+ctd.algoa.data.tz%>%
+  filter(pressure != 0)%>%group_by(profile)%>%
+  summarise(index.pmin = which.min(pressure),
+            lon = lon[index.pmin],
+            lat = lat[index.pmin],
+            pressure = pressure[index.pmin],
+            fluorescence = fluorescence[index.pmin],
+            temperature = temperature[index.pmin],
+            salinity = salinity[index.pmin],
+            oxygen = oxygen[index.pmin])%>%
+  ungroup()%>%
+  mutate(season = "SE.algoa"))
+
+
+```
+
+\newpage
+# Results
+## Seasonal and spatial variation of fluorescence and depth at SCM
+Variation of subsurface chlorophyll maximum (SCM) at different seasons and transects are shown in Figure \@ref(fig:fpmax). The result showed that, during northeast monsoon season SCM occurred at deeper waters (between 50 and 70 m) than in SE (between 30 and 50 m) monsoon season at both Zanzibar, Kimbiji, Mafia, Lindi and Mtwara transects (Figure \@ref(fig:fpmax)a). The Wilcoxon rank sum test showed that, there is a significant difference between depth at which SCM occurs in NE and SE monsoon season (W = 15, *p* < 0.05). While the depth at which SCM occurred increases from Zanzibar to Mafia in NE monsoon season, this depth decreases from Mafia to Mtwara site in the same season (Figure \@ref(fig:fpmax)a). Contrary, fluorescence concentration was higher during the SE monsoon season than in NE monsoon (Figure \@ref(fig:fpmax)b)  at SCM for all transects. This difference in fluorescence concentration between NE and SE monsoon season was statistically significant during the study period (W = 324, *p* < 0.05). Figure \@ref(fig:fpmax)a & b showed that, Lindi transect had higher fluorescence concentration but this was observed at shallower depth than other transects in SE monsoon season. Also, Zanzibar transect had lowest fluorescence concentration and this occurred at shallower depth than other transects in NE monsoon. Thus, there might be an association between amount of fluorescence concentration and the depth at which SCM occurs in different monsoon season.
+
+```{r fpmax, echo=FALSE, fig.cap="Seasonal and spatial variation of a) depth and b) fluorescence at SCM along the sampling transects", fig.width=6, fig.height=4}
+pfmax.stat = pressure.chl.stat  %>% 
+   filter(season != "SE" & criteria == "pressure")%>%
+  ggplot(aes(x = transect, y = pmean, colour = season)) +
+  geom_point(position = position_dodge(0.5), size = 4) +
+  geom_errorbar(aes(ymin = pmean - perror,
+                    ymax = pmean + perror),
+                position = position_dodge(0.5),
+                width = 0.2) +
+  scale_y_reverse(breaks = seq(10, 85, 10)) +
+  scale_x_discrete(limits = c("Zanzibar","Kimbiji", "Mafia", "Lindi", "Mtwara")) +
+  theme_bw()+
+  theme(legend.position = "right",
+        axis.text = element_text(size = 10, colour = 1), 
+        axis.title = element_text(size = 12),
+        legend.key.width = unit(2,"lines"),
+        axis.title.x = element_blank(),
+        panel.grid = element_line(linetype = 3, colour = "grey90"))+
+  ggsci::scale_color_jco(name = "Monsoon\nseason")+
+  labs(y = "Depth [m]") +
+  geom_text(aes(x = "Mtwara", y = 30, label = "a)"), col = "black", fontface = "bold", size = 5)
+  
+fmax.stat = pressure.chl.stat  %>% 
+   filter(season != "SE" & criteria == "fluorescence")%>%
+  ggplot(aes(x = transect, y = fmean, colour = season)) +
+  geom_point(position = position_dodge(0.5), size = 4) +
+  geom_errorbar(aes(ymin = fmean - ferror,
+                    ymax = fmean + ferror),
+                position = position_dodge(0.5), # allows the NE and SE points to be spaced apart, not on the same                                                       value 
+                width = 0.2) +
+  scale_y_continuous(breaks = seq(0, 2, .2)) +
+  scale_x_discrete(limits = c("Zanzibar","Kimbiji", "Mafia", "Lindi", "Mtwara")) +
+  theme_bw()+
+  theme(legend.position = "none",
+        axis.text = element_text(size = 10, colour = 1), 
+        axis.title = element_text(size = 12),
+        legend.key.width = unit(2,"lines"),
+        axis.title.x = element_blank(),
+        panel.grid = element_line(linetype = 3, colour = "grey90"))+
+  ggsci::scale_color_jco(name = "Monsoon\nseason")+
+  labs(y = expression(Fluorescence~(mgm^{-3}))) +
+  geom_text(aes(x = "Mtwara", y = 1.6, label = "b)"), col = "black", fontface = "bold", size = 5)
+
+
+pfmax.stat / fmax.stat
+
+# pfmax.stat / fmax.stat + plot_annotation(tag_levels = "a", tag_suffix = ")") # plot annotation used to add labels to the plot
+#put two or more graphs into the same column, in patchwork package
+#pfmax.stat + fmax.stat #put two or more graphs on the same row
+```
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+cor.se.data = pressure.chl.combined%>%filter(season != "SE" & season == "SE.algoa" & criteria == "pressure")
+cor.ne.data = pressure.chl.combined%>%filter(season != "SE" & season == "NE" & criteria == "pressure")
+
+cor.test(cor.se.data$pressure, cor.se.data$fluorescence, method = "pearson")
+cor.test(cor.ne.data$pressure, cor.ne.data$fluorescence, method = "pearson")
+
+ggplot(data = pressure.chl.combined%>%filter(season != "SE" & criteria == "pressure"), 
+       aes(x = pressure, y = fluorescence)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = F, orientation = "y") +
+  facet_wrap(~season, nrow = 2, scales = "free_y")
+
+```
+
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+## Statistical Analysis
+
+NE.data = pressure.chl.combined%>%filter(season == "NE")
+SE.data = pressure.chl.combined%>%filter(season == "SE.algoa")
+
+shapiro.test(NE.data$fluorescence)
+shapiro.test(SE.data$fluorescence)
+shapiro.test(NE.data$pressure)
+shapiro.test(SE.data$pressure)
+
+wilcox.test(NE.data$pressure, SE.data$pressure)
+wilcox.test(NE.data$fluorescence, SE.data$fluorescence)
+
+```
+
+
+##  Comparison between fluorescence at SCM and at surface layer
+Seasonal variation of fluorescence concentration at SCM is shown in Table \@ref(tab:tab1) . The result showed that, SE had higher fluorescence concentration than NE monsoon season at SCM. While chlorophyll fluorescence ranged between 0.50 and 1.39 mgm^-3^ with mean (mean $\pm$ standard error) of (0.87 $\pm$ 0.03) in NE monsoon season, it ranged between 0.599 and 2.13 mgm^-3^ and the mean (mean $\pm$ standard error) of (1.296 $\pm$ 0.06) in SE monsoon season (Table \@ref(tab:tab1)).
+
+
+```{r, tab1, echo=FALSE, warning=FALSE, message=FALSE}
+chl.table.fmax = pressure.chl.combined%>%filter(season != "SE")%>%
+  mutate(season = replace(season, season == "SE.algoa", "SE"))%>%
+  group_by(season)%>%
+  summarise(Min = min(fluorescence, na.rm = T),
+            Max = max(fluorescence, na.rm = T),
+            Mean = mean(fluorescence, na.rm = T),
+            Std.error = sd(fluorescence, na.rm = T)/sqrt(length(fluorescence)))
+
+chl.table.fmax%>%kableExtra::kable(format = "latex", 
+                  col.names = c("Season",  "Minimum", "Maximum", "Mean", "Std error"),
+                  caption = "Table showing summary statistics of fluorescence at subsurface chlorophyll maximum layer",
+                  booktabs = TRUE,
+                  align = "c", 
+                  digits = 2)%>%
+  kableExtra::add_header_above(c("", "Descriptive statistics" = 4))
+
+```
+
+Variation of chlorophyll fluorescence at surface layer of the ocean is shown in Table \@ref(tab:tab2). Like SCM, surface layer also had higher fluorescence concentration in SE than in NE monsoon season.  Fluorescence ranged between 0.029 and 0.729 mgm^-3^ in NE monsoon season with the mean concentration (mean $\pm$ standard error) of (0.198 $\pm$ 0.036) (Table \@ref(tab:tab2)). During the SE monsoon season surface fluorescence ranged between 0.198 and 1.550 mgm^-3^ with the mean value (mean $\pm$ standard error) of (0.739 $\pm$ 0.110) (Table \@ref(tab:tab2)). 
+
+
+```{r, tab2, warning=FALSE, message=FALSE, echo=FALSE}
+chl.table.surface = ctd.surface.data%>%filter(season != "SE" & fluorescence < 2)%>%
+  mutate(season = replace(season, season == "SE.algoa", "SE"))%>%
+  group_by(season)%>%
+  summarise(Min = min(fluorescence, na.rm = T),
+            Max = max(fluorescence, na.rm = T),
+            Mean = mean(fluorescence, na.rm = T),
+            Std.error = sd(fluorescence, na.rm = T)/sqrt(length(fluorescence)))
+
+chl.table.surface%>%kableExtra::kable(format = "latex",
+                                      col.names = c("Season", "Minimum", "Maximum", "Mean", "Std error"),
+                                      caption = "Table showing summary statistics of fluorescence at surface layer of the ocean",
+                                      booktabs = TRUE,
+                                      align = "c",
+                                      digits = 2)%>%
+  kableExtra::add_header_above(c("", "Descriptive statistics" = 4))
+```
+
+When comparing between surface and SCM layer, they showed that, amount of fluorescence at surface layer was lower than that at SCM in both NE and SE monsoon seasons (Figure \@ref(fig:surface-scm-point)). The Wilcoxon rank sum test showed that there is a significant difference in chlorophyll fluorescence between surface layer and SCM layer for both NE (W = 905, p < 0.05) and SE (W = 210, p < 0.05) monsoon season.
+
+```{r surface-scm-point, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Seasonal variation of chlorophyll-a fluorescence at surface and SCM layer", fig.width=3, fig.height=3}
+data.surface.scm = ctd.surface.data%>%
+  filter(season != "SE")%>%
+  mutate(strata = "Surface")%>%bind_rows(
+pressure.chl.combined%>%
+  filter(season != "SE")%>%
+  mutate(strata = "SCM"))%>%
+  mutate(season = replace(season, season == "SE.algoa", "SE"))%>%
+  group_by(season, strata)%>%
+  summarise(chl.mean = mean(fluorescence, na.rm = T),
+            chl.error = sd(fluorescence, na.rm = T)/sqrt(length(fluorescence)))
+
+ggplot(data = data.surface.scm, aes(x = strata, y = chl.mean, colour = season)) +
+  geom_point(position = position_dodge(0.5), size = 4) + 
+  geom_errorbar(aes(ymin = chl.mean - chl.error, 
+                    ymax = chl.mean + chl.error),
+                position = position_dodge(0.5),
+                width = 0.2) +
+  ggsci::scale_color_jco(name = "Monsoon \nseason") +
+  theme_bw() +
+  theme(panel.background = element_rect(colour = "black"),
+        axis.text = element_text(colour = "black", size = 11),
+        panel.grid = element_line(colour = "grey90", linetype = 3),
+        axis.title.x = element_blank()) +
+  labs(y = expression(Chlorophyll-a~(mgm^{-3})))
+```
+
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+data.scm = pressure.chl.combined%>%filter(season != "SE" & criteria == "fluorescence" )
+data.surface = ctd.surface.data%>%filter(season != "SE" )
+
+
+data.scm.ne = data.scm%>%filter(season == "NE")%>%rename(chl.scm = fluorescence)
+data.surface.ne = data.surface%>%filter(season == "NE")%>%rename(chl.surface = fluorescence)%>%select(chl.surface)
+scm.surface.ne = data.scm.ne%>%bind_cols(data.surface.ne)
+
+data.scm.se = data.scm%>%filter(season == "SE.algoa")%>%rename(chl.scm = fluorescence)
+data.surface.se = data.surface%>%filter(season == "SE.algoa")%>%rename(chl.surface = fluorescence)%>%select(chl.surface)
+
+# shapiro.test(scm.surface.ne$chl.scm)
+# shapiro.test(scm.surface.ne$chl.surface)
+# shapiro.test(data.scm.se$chl.scm)
+# shapiro.test(data.surface.se$chl.surface)
+
+wilcox.test(scm.surface.ne$chl.scm, scm.surface.ne$chl.surface) #W = 905, p-value = 1.994e-10
+wilcox.test(data.scm.se$chl.scm, data.surface.se$chl.surface) #W = 210, p-value = 0.008101
+
+
+```
+
+
+```{r, warning=FALSE, message=FALSE, eval=FALSE, include=FALSE}
+# ggplot(data = pressure.chl.combined%>%filter(season != "SE" & season == "NE"),
+#        aes(x = lon, y = lat)) +
+#   geom_point()
+
+surface.chl = pressure.chl.combined%>%filter(season != "SE" & season == "NE")
+
+
+  
+  x = surface.chl$lon
+  y = surface.chl$lat
+  z = surface.chl$fluorescence
+  
+  interp.chl = interpBarnes(x = x,
+                            y = y,
+                            z = z,
+                            xg = pretty(x, n = 50),
+                            yg = pretty(y, n = 50), trim = 0.3)
+  par(mfrow = c(1,2))
+  
+  imagep(interp.chl$xg, interp.chl$yg, interp.chl$zg, filledContour = T, 
+         col = oceColors9A(120), 
+         main = paste("Season = NE monsoon"), 
+         zlim = c(0.5, 2.14), 
+         xlim = c(39.3, 40.8), 
+         ylim = c(-10.5, -6))
+  
+  contour(interp.chl$xg, interp.chl$yg, interp.chl$zg, col = "black", add = TRUE)
+
+surface.chl = pressure.chl.combined%>%filter(season != "SE" & season == "SE.algoa")
+  
+  x = surface.chl$lon
+  y = surface.chl$lat
+  z = surface.chl$fluorescence
+  
+  interp.chl = interpBarnes(x = x,
+                            y = y,
+                            z = z,
+                            xg = pretty(x, n = 50),
+                            yg = pretty(y, n = 50), trim = .3)
+  
+  imagep(interp.chl$xg, interp.chl$yg, interp.chl$zg, filledContour = T, 
+         col = oceColors9A(120), 
+         main = paste("Season = SE monsoon"), 
+         zlim = c(0.5, 2.14), 
+         xlim = c(39.3, 40.8), 
+         ylim = c(-10.5, -6))
+  contour(interp.chl$xg, interp.chl$yg, interp.chl$zg, col = "black", add = TRUE)
+```
+
+
+```{r, include=FALSE, message=FALSE, warning=FALSE}
+surface.chl.se = pressure.chl.combined%>%filter(season != "SE" & season == "SE.algoa")
+
+xse = surface.chl.se$lon
+yse = surface.chl.se$lat
+zse = surface.chl.se$fluorescence
+  
+  interp.chl.se = interpBarnes(x = xse,
+                               y = yse,
+                               z = zse,
+                               xg = pretty(xse, n = 50),
+                               yg = pretty(yse, n = 50), trim = .3)
+
+lon = interp.chl.se$xg
+lat = interp.chl.se$yg
+chl = interp.chl.se$zg
+
+length(lon);length(lat);dim(chl)
+
+interp.se.fmax.tb = expand.grid(lon,lat) %>% 
+  bind_cols(expand.grid(chl)) %>% as_tibble() %>% 
+  rename(lon = 1, lat = 2, chl = 3)
+
+
+
+surface.chl.ne = pressure.chl.combined%>%filter(season != "SE" & season == "NE")
+
+ xne = surface.chl.ne$lon
+ yne = surface.chl.ne$lat
+ zne = surface.chl.ne$fluorescence
+  
+  interp.chl.ne = interpBarnes(x = xne,
+                               y = yne,
+                               z = zne,
+                               xg = pretty(xne, n = 50),
+                               yg = pretty(yne, n = 50), trim = 0.2)
+  # par(mfrow = c(1,2))
+
+lon = interp.chl.ne$xg
+lat = interp.chl.ne$yg
+chl = interp.chl.ne$zg
+
+length(lon);length(lat);dim(chl)
+
+interp.ne.fmax.tb = expand.grid(lon,lat) %>% 
+  bind_cols(expand.grid(chl)) %>% as_tibble() %>% 
+  rename(lon = 1, lat = 2, chl = 3)
+```
+
+## Isosurface at subsurface chlorophyll maximum and at surface layer
+Distribution of fluorescence concentration at SCM within the sampled transects in NE and SE monsoon season are shown in Figure \@ref(fig:isofmax). The result shows that NE monsoon season had higher fluorescence concentration in areas away from the coast and lower in areas close to the coast (Figure \@ref(fig:isofmax)a). Contrary, SE monsoon season showed higher fluorescence concentration in areas close to the coast and low away from the coast (Figure \@ref(fig:isofmax)b). While most of areas between longitude `r metR::LonLabel(40)` and `r metR::LonLabel(41)` had higher fluorescence concentration greater than 1 mgm^-3^ in NE monsoon season, most of these areas showed low concentration below 1 mgm^-3^ in SE monsoon season. Also, areas between longitude `r metR::LonLabel(39)` and `r metR::LonLabel(40)` showed low fluorescence amount less than 1 mgm^-3^ in NE monsoon season, this area recorded higher concentration greater than 1.2 mgm^-3^ in SE monsoon season (Figure \@ref(fig:isofmax)). 
+
+```{r, isofmax, fig.cap="Fluorescence variation at subsurface chlorophyll maximum within sampled transects in a) northeast and b) southeast monsoon seasons", echo=FALSE, warning=FALSE, message=FALSE, fig.height=4, fig.width=5}
+fmax.se = ggplot() +
+  geom_contour_filled(data = interp.se.fmax.tb, aes(x =lon, y = lat, z = chl), bins = 10)+
+  geom_sf(data = tz.mz, colour = "black", fill = "grey80") +
+  coord_sf(xlim = c(39, 41), ylim = c(-10.6, -5.4)) +
+  geom_point(data = pressure.chl.combined%>%filter(season != "SE" & season == "SE.algoa"),
+             aes(lon,lat))+
+  scale_fill_manual(values = oce.colors9A(10), 
+                    labels = seq(0.13,1.94, length.out = 20) %>% round(2)) +
+  theme(panel.background = element_rect(colour = "black", fill = NA),
+        panel.grid.major = element_line(colour = "grey80", linetype = 3),
+        axis.text = element_text(colour = "black", size = 11)) +
+  labs(x = "", y = "") +
+  scale_x_continuous(breaks = c(39, 40, 41), labels = metR::LonLabel(c(39, 40, 41))) +
+  geom_text(aes(x = 40.7, y = -5.5, label = "b)"), col = "black", fontface = "bold", size = 5)
+
+## if you want to change number of bins in a plot, you need also need to change in colors (oce.colors())
+
+
+# interp.se.fmax.tb %>%
+#   ggplot(aes(x = lon, y = lat)) +
+#   metR::geom_contour_fill(aes(z = chl), na.fill = TRUE)+
+#   geom_point(data = pressure.chl.combined%>%filter(season != "SE" & season == "SE.algoa"),
+#              aes(lon,lat))+
+#   scale_fill_gradientn(colors = oce.colors9A(120))
+
+
+fmax.ne = ggplot() +
+  geom_contour_filled(data = interp.ne.fmax.tb, aes(x =lon, y = lat, z = chl), bins = 10)+
+  geom_sf(data = tz.mz, colour = "black", fill = "grey80") +
+  coord_sf(xlim = c(39, 41), ylim = c(-10.6, -5.4)) +
+  geom_point(data = pressure.chl.combined%>%filter(season != "SE" & season == "NE"),
+             aes(lon,lat))+
+  scale_fill_manual(values = oce.colors9A(10), 
+                    labels = seq(0.13,1.94, length.out = 20) %>% round(2)) +
+  theme(panel.background = element_rect(colour = "black", fill = NA),
+        panel.grid.major = element_line(colour = "grey80", linetype = 3),
+        axis.text = element_text(colour = "black", size = 11),
+        legend.position = "none") +
+  labs(x = "", y = "") +
+  scale_x_continuous(breaks = c(39, 40, 41), labels = metR::LonLabel(c(39, 40, 41))) +
+  geom_text(aes(x = 40.7, y = -5.5, label = "a)"), col = "black", fontface = "bold", size = 5)
+
+fmax.ne + fmax.se 
+
+```
+
+
+```{r, include=FALSE, warning=FALSE, message=FALSE}
+## Isosurface at the surface water
+
+surface.chl.se = ctd.surface.data%>%filter(season != "SE" & season == "SE.algoa" & fluorescence < 2)
+
+xse = surface.chl.se$lon
+yse = surface.chl.se$lat
+zse = surface.chl.se$fluorescence
+  
+  interp.chl.se = interpBarnes(x = xse,
+                               y = yse,
+                               z = zse,
+                               xg = pretty(xse, n = 50),
+                               yg = pretty(yse, n = 50), trim = .3)
+
+lon = interp.chl.se$xg
+lat = interp.chl.se$yg
+chl = interp.chl.se$zg
+
+length(lon);length(lat);dim(chl)
+
+interp.se.fsurface.tb = expand.grid(lon,lat) %>% 
+  bind_cols(expand.grid(chl)) %>% as_tibble() %>% 
+  rename(lon = 1, lat = 2, chl = 3)
+
+
+
+surface.chl.ne = ctd.surface.data%>%filter(season != "SE" & season == "NE" & fluorescence < 2)
+
+ xne = surface.chl.ne$lon
+ yne = surface.chl.ne$lat
+ zne = surface.chl.ne$fluorescence
+  
+  interp.chl.ne = interpBarnes(x = xne,
+                               y = yne,
+                               z = zne,
+                               xg = pretty(xne, n = 50),
+                               yg = pretty(yne, n = 50), trim = 0.2)
+  # par(mfrow = c(1,2))
+
+lon = interp.chl.ne$xg
+lat = interp.chl.ne$yg
+chl = interp.chl.ne$zg
+
+length(lon);length(lat);dim(chl)
+
+interp.ne.fsurface.tb = expand.grid(lon,lat) %>% 
+  bind_cols(expand.grid(chl)) %>% as_tibble() %>% 
+  rename(lon = 1, lat = 2, chl = 3)
+```
+
+On the other hand, distribution of fluorescence at surface layer of the ocean also varied with seasons. During NE monsoon area in the eastern side of Unguja Island at longitude `r metR::LonLabel(39.5)` to longitude `r metR::LonLabel(40)` and latitude `r metR::LatLabel(-6)` had higher concentration between 1 and 1.6 mgm^-3^ (Figure \@ref(fig:isosurface)a). Other areas showed low fluorescence concentration less than 0.9 mgm^-3^ in this season. During the SE monsoon season areas between longitude `r metR::LonLabel(39)` and `r metR::LonLabel(40.5)` and latitude `r metR::LatLabel(-10)` and `r metR::LatLabel(-8)` had higher fluorescence between 1.2 and 1.6 mgm^-3^ (Figure \@ref(fig:isosurface)b). Other areas had fluorescence less than 0.9 mgm^-3^ in SE monsoon season. When comparing Figure \@ref(fig:isofmax) and Figure \@ref(fig:isosurface) they show that there is higher fluorescence concentration at SCM than at surface layer in both NE and SE monsoon seasons.
+
+```{r, isosurface, fig.cap="Fluorescence variation at surface layer within sampled transects in a) northeast and b) southeast monsoon seasons", echo=FALSE, warning=FALSE, message=FALSE, fig.height=4, fig.width=5}
+
+fsurface.se = ggplot() +
+  geom_contour_filled(data = interp.se.fsurface.tb, aes(x =lon, y = lat, z = chl), bins = 10)+
+  geom_sf(data = tz.mz, colour = "black", fill = "grey80") +
+  coord_sf(xlim = c(39, 41), ylim = c(-10.6, -5.4)) +
+  geom_point(data = ctd.surface.data%>%filter(season != "SE" & season == "SE.algoa"),
+             aes(lon,lat))+
+  scale_fill_manual(values = oce.colors9A(10),
+                    labels = seq(0.13, 1.94, length.out = 20) %>% round(2)) +
+  theme(panel.background = element_rect(colour = "black", fill = NA),
+        panel.grid.major = element_line(colour = "grey80", linetype = 3),
+        axis.text = element_text(colour = "black", size = 11)) +
+  labs(x = "", y = "") +
+  scale_x_continuous(breaks = c(39, 40, 41), labels = metR::LonLabel(c(39, 40, 41)))+
+  geom_text(aes(x = 40.7, y = -5.5, label = "b)"), col = "black", fontface = "bold", size = 5)
+
+
+# interp.se.fmax.tb %>%
+#   ggplot(aes(x = lon, y = lat)) +
+#   metR::geom_contour_fill(aes(z = chl), na.fill = TRUE)+
+#   geom_point(data = pressure.chl.combined%>%filter(season != "SE" & season == "SE.algoa"),
+#              aes(lon,lat))+
+#   scale_fill_gradientn(colors = oce.colors9A(120))
+
+
+fsurface.ne = ggplot() +
+  geom_contour_filled(data = interp.ne.fsurface.tb, aes(x =lon, y = lat, z = chl), bins = 10)+
+  geom_sf(data = tz.mz, colour = "black", fill = "grey80") +
+  coord_sf(xlim = c(39, 41), ylim = c(-10.6, -5.4)) +
+  geom_point(data = ctd.surface.data%>%filter(season != "SE" & season == "NE"),
+             aes(lon,lat))+
+  scale_fill_manual(values = oce.colors9A(10),
+                    labels = seq(0.13, 1.94, length.out = 20) %>% round(2)) +
+  theme(panel.background = element_rect(colour = "black", fill = NA),
+        panel.grid.major = element_line(colour = "grey80", linetype = 3),
+        axis.text = element_text(colour = "black", size = 11),
+        legend.position = "none") +
+  labs(x = "", y = "") +
+  scale_x_continuous(breaks = c(39, 40, 41), labels = metR::LonLabel(c(39, 40, 41)))+
+  geom_text(aes(x = 40.7, y = -5.5, label = "a)"), col = "black", fontface = "bold", size = 5)
+
+fsurface.ne + fsurface.se 
+
+```
+
+\newpage
+# Discussion
+
+The present study provides information on distribution of chlorophyll-*a* fluorescence at subsurface chlorophyll maximum  (SCM) in northeast (NE) and southeast (SE) monsoon season along Tanzania coastal waters. The SCM occurred at shallower depth, less than 50 m in SE monsoon season, unlike the NE monsoon which occurred at deeper waters greater than 50 m (Figure \@ref(fig:fpmax)a). Also SE monsoon recorded significant higher fluorescence concentration than NE monsoon season for all transects (Figure \@ref(fig:fpmax)b). Availability of high fluorescence concentration at shallower depth in SE monsoon can be linked with environmental characteristics during this season. High wind stress and relative low sea surface temperature in SE monsoon lead to vertical mixing of water column as a result nutrient flux from the bottom are brought close to the surface where maximum light is available for photosynthesis  [@george13; @richmond11; @mahongo11]. This in turn cause SCM with high chlorophyll-*a* fluorescence at shallower depth during SE monsoon season. The reverse of monsoon winds with less wind stress and higher sea surface temperature in NE monsoon season cause poor mixing of the water column [@mcc88; @george13; @richmond11; @mahongo11]. Warmer water at surface of the ocean cause density difference between the upper nutrient poor and bottom nutrient rich waters as a result a thermocline will be established between these two water masses. This will prevent the nutrient from the bottom to penetrate the thermocline towards the surface where they can be used by phytoplankton in photosynthesis. This will cause SCM of low chlorophyll-*a* fluorescence to occur at relatively higher depth.
+
+It was also observed that, chlorophyll-*a* fluorescence was higher in coastal waters and low in areas away from the coast at SCM during the SE monsoon season (Figure \@ref(fig:isofmax)b). Area with low fluorescence concentration in SE monsoon coincide with passage of East Africa Coastal Current (EACC). Flushing of poor nutrient, high salinity and warmer water by EACC [@mahongo14] leads to low fluorescence concentration around this area. Also, because SCM in SE monsoon season occurred close to surface, higher fluorescence concentration in nearshore areas might be attributed by runoff which lead to nutrient flux within these areas. 
+
+Also, the significant higher fluorescence concentration at SCM and surface of the ocean in both NE and SE monsoon season was also observed during the study period (Figure \@ref(fig:surface-scm-point)). Studies showed that, vertical distribution of Chl-*a* in marine environment is governed by nutrient concentration and light intensity [@george13]. At surface layer, light is plenty while nutrient is limited for phytoplankton growth [@valenti15]. At depth, light becomes limiting while nutrients are plenty. Because of these two factors (nutrient and light), there is an increase in Chl-*a* within photic layer  [@cullen82; @valenti15; @george13].
+
+\newpage
+# Conclusion {-}
+Generally, studies on distribution of SCM is of great importance in marine and aquatic environment due to its ecological potential. The study revealed higher chlorophyll-*a* fluorescence at SCM than at surface layer. Also, SE monsoon season had higher concentration at SCM than NE monsoon and this was recorded at shallower depth in both Zanzibar, Kimbiji, Mafia, Lindi and Mtwara transects. Thus, the amount of chlorophyll fluorescence together with depth at which SCM occurs depends on the season of the area.
+
+# Acknowledgement {-}
+We are thankful to the second International Indian Ocean Expedition (IIOE-2) and the Algoa cruise for allowing us to use their data.
+
+\newpage
+# References {-}
+
+
